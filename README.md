@@ -1,1 +1,1 @@
-# zero-knowledge-puzzles
+# zero-knowledge-puzzles .
