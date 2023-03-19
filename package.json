@@ -1,0 +1,22 @@
+{
+  "name": "zero-knowledge-puzzles",
+  "version": "1.0.0",
+  "description": "Zero Knowledge Puzzles by RareSkills",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Rareskills",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RareSkills/zero-knowledge-puzzles"
+  },
+  "dependencies": {
+    "chai": "^4.3.7",
+    "circom_tester": "^0.0.19",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "mocha": "^10.2.0"
+  }
+}
