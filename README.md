@@ -46,7 +46,7 @@ Write your solution .
 Then run the following command
 
 ```
-npm test 
+yarn test ./test/<TestName>.js
 ```
 
 
