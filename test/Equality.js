@@ -11,18 +11,17 @@ const wasm_tester = require("circom_tester").wasm;
 
 const assert = chai.assert;
 
-describe("Add Test ", function (){
+describe("Equality Test ", function (){
     this.timeout(100000);
 
-    it("Should create a Addition circuit", async()=>{
-        const circuit = await wasm_tester(path.join(__dirname,"../Addition","Add.circom"));
+    it("Check Equality", async()=>{
+        const circuit = await wasm_tester(path.join(__dirname,"../Equality","Equality.circom"));
         await circuit.loadConstraints();
         let witness ; 
-        // 2+ 4 = 6
-        const expectedOutput = 6;
+        // 2 == 2 && 2 == 2 
+        const expectedOutput = 1;
         
-        witness = await circuit.calculateWitness({"a":[2,4]},true);
-        
+        witness = await circuit.calculateWitness({"a":[2,2,2]},true);
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput)));
     
