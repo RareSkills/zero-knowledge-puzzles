@@ -1,5 +1,4 @@
 const chai = require('chai');
-const { compile, loadBigInt } = require('circom');
 const { wasm } = require('circom_tester');
 const path = require("path");
 const F1Field = require("ffjavascript").F1Field;

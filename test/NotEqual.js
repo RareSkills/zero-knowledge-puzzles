@@ -1,5 +1,4 @@
 const chai = require('chai');
-const { compile, loadBigInt } = require('circom');
 const { wasm } = require('circom_tester');
 const path = require("path");
 const F1Field = require("ffjavascript").F1Field;
@@ -29,6 +28,6 @@ describe("NotEqual Test ", function (){
         let expectedOutput2 = 1;
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput2)));
-    
+        
     })
 })
