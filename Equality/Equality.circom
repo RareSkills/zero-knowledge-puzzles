@@ -1,8 +1,8 @@
 pragma circom 2.1.4;
 
 
-// Input 3 values and check if they all are equal.
-// Return using 'c'.
+// Input 3 values using 'a'(array of length 3) and check if they all are equal.
+// Return using signal 'c'.
 
 
 template Equality() {
