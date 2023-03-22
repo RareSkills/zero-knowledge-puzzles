@@ -10,6 +10,5 @@ template Add() {
    
 }
 
-
 component main  = Add();
 
