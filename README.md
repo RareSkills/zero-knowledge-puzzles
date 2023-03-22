@@ -49,4 +49,17 @@ Then run the following command
 yarn test ./test/<TestName>.js
 ```
 
+## Troubleshoot
+
+Mac users getting this error on circom installation
+```
+error: linking with `cc` failed: exit status: 1
+```
+
+Install xcode , then restart your mac .
+
+```
+xcode-select --install
+```
+
 
