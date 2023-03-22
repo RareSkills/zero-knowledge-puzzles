@@ -6,8 +6,8 @@ pragma circom 2.1.4;
 // HINT: Non Quadratic constraints are not allowed. 
 
 template Pow() {
-    Your code here ..
-    
+   
+   // Your Code here.. 
 }
 
 component main = Pow();

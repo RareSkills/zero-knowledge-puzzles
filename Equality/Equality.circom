@@ -7,6 +7,8 @@ pragma circom 2.1.4;
 
 template Equality() {
    // Your Code Here..
+
+   
 }
 
 component main = Equality();

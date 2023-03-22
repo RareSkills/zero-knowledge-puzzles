@@ -24,6 +24,12 @@ describe("Add Test ", function (){
         
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput)));
+
+        witness = await circuit.calculateWitness({"a":[3,7]},true);
+        // 3 +7 = 10
+        const expectedOutput2 = 10;
+        assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
+        assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput2)));
     
     })
 })

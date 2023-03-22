@@ -24,6 +24,11 @@ describe("NotEqual Test ", function (){
         witness = await circuit.calculateWitness({"a":[2,2]},true);
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput)));
+        
+        witness = await circuit.calculateWitness({"a":[1,2]},true);
+        let expectedOutput2 = 1;
+        assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
+        assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput2)));
     
     })
 })
