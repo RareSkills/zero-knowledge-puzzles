@@ -7,7 +7,7 @@ pragma circom 2.1.4;
 
 template Add() {
    // Your code here 
-  
+   
 }
 
 component main  = Add();
