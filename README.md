@@ -62,4 +62,7 @@ Install xcode , then restart your mac .
 xcode-select --install
 ```
 
+## Contributors
+- [supernova](https://github.com/supernovahs)
+- [tanim0la](https://github.com/tanim0la)
 
