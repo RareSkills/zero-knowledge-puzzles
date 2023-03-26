@@ -4,7 +4,6 @@ pragma circom 2.1.4;
 // Output : 'c 
 // Using a forLoop , add a[0] and a[1] , 4 times in a row .
 
-// Hint: Parameters in Circom.
 template ForLoop() {
 
 // Your Code here..
