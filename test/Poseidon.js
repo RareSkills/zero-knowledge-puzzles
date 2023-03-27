@@ -28,6 +28,5 @@ describe("Poseidon Test ", function (){
         let expectedOutput2  = BigInt("20975096508187766231858611645250735876341389173332244772711207858519760900883");
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput2)));
-    
     })
 })
