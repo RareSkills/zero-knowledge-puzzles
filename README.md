@@ -49,6 +49,10 @@ Then run the following command
 yarn test ./test/<TestName>.js
 ```
 
+## Relevant links 
+
+[CircomLib](https://github.com/iden3/circomlib )
+
 ## Troubleshoot
 
 Mac users getting this error on circom installation

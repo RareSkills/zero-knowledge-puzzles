@@ -10,4 +10,4 @@ template ForLoop() {
 
 }  
 
-component main = ForLoop(); // HINT:Need to also insert something here .
+component main = ForLoop();

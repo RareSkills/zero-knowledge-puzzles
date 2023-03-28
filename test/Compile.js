@@ -27,7 +27,7 @@ function unstringifyBigInts(o) {
     }
 }
 
-describe("Should verufy correctly  ", function (){
+describe("Should verify correctly  ", function (){
     this.timeout(100000);
 
     it("Should compile the circuit and generate the proofs and verify them ", async()=> {
