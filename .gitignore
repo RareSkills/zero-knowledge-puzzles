@@ -1,6 +1,5 @@
 node_modules
 
 cache/
-contracts/
+
 artifacts/
-Compile/
