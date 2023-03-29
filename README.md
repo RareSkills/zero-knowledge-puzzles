@@ -51,7 +51,9 @@ yarn test ./test/<TestName>.js
 
 ## Relevant links 
 
-[CircomLib](https://github.com/iden3/circomlib )
+- [CircomLib](https://github.com/iden3/circomlib )
+
+- [Quickly compile circuits using this online browser compiler - Zkrepl](https://zkrepl.dev)
 
 ## Troubleshoot
 
