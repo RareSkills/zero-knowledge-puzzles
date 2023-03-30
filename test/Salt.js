@@ -17,12 +17,11 @@ describe(" mimcSponge  ", function (){
         const circuit = await wasm_tester(path.join(__dirname,"../Salt","Salt.circom"));
         await circuit.loadConstraints();
         let witness ; 
-        // 
+        
         const expectedOutput = 9298463176047380197626371459244539548819181814394649924288766436865924479390n;
         
         witness = await circuit.calculateWitness({"a":"4","b":"4","salt":"2"},true);
-        console.log((witness[1]));
-        console.log(Fr.e(expectedOutput));
+
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput)));
 
