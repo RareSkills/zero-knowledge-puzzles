@@ -49,6 +49,19 @@ Then run the following command
 yarn test ./test/<TestName>.js
 ```
 
+## Suggested Order for the Puzzles.
+
+- [Addition](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Addition)
+- [Equality](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Equality)
+- [NotEqual](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/NotEqual)
+- [Poseidon](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Poseidon)
+- [ForLoop](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/ForLoop)
+- [Power](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Power)
+- [Range](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Range)
+- [Salt](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Salt)
+- [QuadraticEquation](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/QuadraticEquation)
+- [Compile](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Compile)
+
 ## Relevant links 
 
 - [CircomLib](https://github.com/iden3/circomlib )
