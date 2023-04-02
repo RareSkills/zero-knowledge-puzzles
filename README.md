@@ -61,6 +61,7 @@ yarn test ./test/<TestName>.js
 - [Salt](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Salt)
 - [QuadraticEquation](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/QuadraticEquation)
 - [Compile](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Compile)
+- [Sudoku](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Sudoku)
 
 ## Relevant links 
 
