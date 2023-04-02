@@ -15,9 +15,9 @@ const assert = chai.assert;
 describe("Quadratic Equations Test ", function () {
   this.timeout(100000);
 
-  it("Should create a Quadratic circuit verfier successfully", async () => {
+  it("Should create a Quadratic circuit verifier successfully", async () => {
     const circuit = await wasm_tester(
-      path.join(__dirname, "../Equations", "QuadraticEquation.circom"),
+      path.join(__dirname, "../QuadraticEquation", "QuadraticEquation.circom"),
     );
     await circuit.loadConstraints();
     let witness;
