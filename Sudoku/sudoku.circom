@@ -16,7 +16,7 @@ include "../node_modules/circomlib/circuits/comparators.circom";
                                                                                    [4, 1, 2, 3]
                                                                                    [2, 3, 4, 1]
 
-    "out" is the signal output of the circuit. "out" is 1 if the solution is correct.                                                                               
+    "out" is the signal output of the circuit. "out" is 1 if the solution is correct, otherwise 0.                                                                               
 */
 
 
