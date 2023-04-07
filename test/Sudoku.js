@@ -55,6 +55,7 @@ describe("Sudoku Tester ", function () {
       true,
     );
 
+// Should 0 be expected output?
     const expectedOutput3 = 0;
     assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
     assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput3)));
