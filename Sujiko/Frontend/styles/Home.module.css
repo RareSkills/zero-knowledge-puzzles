@@ -1,0 +1,91 @@
+
+
+.redbox {
+  position: absolute;
+  z-index: 2;
+  height: 45px;
+  width: 45px;
+  left: calc(33% - 22.5px);
+  top: calc(33% - 22.5px);
+  background-color:  #974fa9;
+  border-radius: 50%; /* make the redbox a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 1px 1px 5px #2c1b35 ;
+}
+
+.redbox1 {
+  position: absolute;
+  z-index: 2;
+  background-color:  #974fa9;
+  height: 45px;
+  width: 45px;
+  left: calc(33% - 22.5px);
+  top: calc(66% - 22.5px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 1px 1px 5px #2c1b35 ;
+}
+
+.redbox2 {
+  position: absolute;
+  z-index: 2;
+  background-color:  #974fa9;
+  height: 45px;
+  width: 45px;
+  left: calc(66% - 22.5px);
+  top: calc(33% - 22.5px);
+  border-radius: 50%; /* make the redbox a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 1px 1px 5px #2c1b35 ;
+}
+.redbox3 {
+  position: absolute;
+  z-index: 2;
+  background-color:  #974fa9;
+  height: 45px;
+  width: 45px;
+  left: calc(66% - 22.5px);
+  top: calc(66% - 22.5px);
+  border-radius: 50%; /* make the redbox a circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 1px 1px 5px #2c1b35 ;
+/* add a black border */
+}
+
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:  #1d1d1d;
+  color: white;
+  text-align: center;
+}
