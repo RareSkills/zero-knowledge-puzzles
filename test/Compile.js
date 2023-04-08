@@ -33,13 +33,12 @@ describe("Should verify correctly  ", function (){
     it("Should compile the circuit and generate the proofs and verify them ", async()=> {
 
         const verifier = await ethers.getContractFactory("Verifier");
-        console.log("verifier",verifier);
         const verifierContract = await verifier.deploy();
         await verifierContract.deployed();
         const { proof, publicSignals } = await groth16.fullProve(
             { "a": "23", "b": "2" }, 
             path.join(__dirname,"../Compile","Mul_js/Mul.wasm"), 
-            path.join(__dirname,"../Compile","circuit_0000.zkey"));
+            path.join(__dirname,"../Compile","Mul_0001.zkey"));
            
         const editedPublicSignal = unstringifyBigInts(publicSignals);
 
@@ -47,7 +46,6 @@ describe("Should verify correctly  ", function (){
 
         const calldata = await groth16.exportSolidityCallData(editedProof,editedPublicSignal);
 
-        console.log("calldata",calldata);
 
         const argv = calldata.replace(/["[\]\s]/g, "").split(',').map(x => BigInt(x).toString());
 
@@ -56,13 +54,8 @@ describe("Should verify correctly  ", function (){
         const c = [argv[6], argv[7]];
         const input = argv.slice(8);
 
-        console.log("a",a);
-        console.log("b",b);
-        console.log("c",c);
-        console.log("input",input);
         const check = await verifierContract.verifyProof(a,b,c,input);
-        console.log("check",check);
-        expect(check).to.be.true;
+        expect(check).to.be.true;ßß
     })
 })
 
