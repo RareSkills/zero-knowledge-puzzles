@@ -1,0 +1,7 @@
+body {
+  height: 100vh;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right,#0b0330, #5904a4);
+  font-family: 'Inter Medium', sans-serif;
+  
+}
