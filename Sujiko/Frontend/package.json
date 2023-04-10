@@ -20,6 +20,7 @@
     "eslint-config-next": "13.3.0",
     "ethers": "^5.7.2",
     "framer-motion": "^10.11.2",
+    "fs": "^0.0.1-security",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -4,24 +4,27 @@ import Footers from "./footer";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {VerifyProof} from "../proofs/Verify.js";
 import {Button } from "@chakra-ui/react";
+import { useContract,useSigner } from 'wagmi';
+import abi from "../proofs/verifier.json";
+import { writeContract,prepareWriteContract } from '@wagmi/core'
+const {ethers} = require('ethers');
 interface SquareProps {
+  val:number[]
+  setval: (val:number[]) => void  //Dispatch<SetStateAction<number[]>>
   index:number
   size: number;
   selected: boolean;
   setSelected: (selected: boolean) => void;
 }
 
-const Square = ({index, size, selected, setSelected }: SquareProps) => {
-  const [value, setValue] =useState(Array(9).fill(0));
-  console.log("value",value);
-
+const Square = ({val,setval,index, size, selected, setSelected }: SquareProps) => {
+ 
+  
   const handleChange = (e:number, index:number) => {
-    console.log("value",e,"index",index);
-    const updatedValues = [...value];
-    // console.log("updatedValues",updatedValues);
+    var updatedValues = [...val];
     updatedValues[index ] = e;
-    // console.log("updatedValues",updatedValues);
-    setValue(updatedValues);
+    setval(updatedValues);
+    console.log("updated array",updatedValues);
   };
 
   
@@ -60,6 +63,7 @@ const Square = ({index, size, selected, setSelected }: SquareProps) => {
       console.log("index",index);
       const newNumber = parseInt(event.key);
       console.log("newNumber",newNumber);
+      
       handleChange(newNumber,index);
       if (!isNaN(newNumber)) {
       }
@@ -77,13 +81,19 @@ const Square = ({index, size, selected, setSelected }: SquareProps) => {
       onClick={handleClick}
       tabIndex={0}
     >
-      {value[index]}
-    </div>
+      {val[index]}
+      </div>
+
   );
 };
 
 export default function Home() {
   const [selectedSquare, setSelectedSquare] = useState<number | null>(null);
+  const [val,setval]  =useState(Array<number>(9).fill(0));
+  console.log("abi",abi);
+  const signer = useSigner();
+  
+  
 
   const handleSquareClick = (index: number) => {
     if (selectedSquare === index) {
@@ -110,12 +120,14 @@ export default function Home() {
     <ConnectButton />
     <div className={styles.container}>
       {/*  This section is hard coded :)*/}
-      <div className={styles.redbox} >5</div>
-      <div className={styles.redbox1}>4</div>
-      <div className={styles.redbox2}>4</div>
-      <div className={styles.redbox3}>4</div>
+      <div className={styles.redbox} >20</div>
+      <div className={styles.redbox1}>22</div>
+      <div className={styles.redbox2}>14</div>
+      <div className={styles.redbox3}>20</div>
       <div style={gridStyle}>
         <Square
+          val = {val}
+          setval = {setval}
           key={0}
           index = {0}
           size={50}
@@ -123,6 +135,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(0)}
         />
         <Square
+        val = {val}
+        setval = {setval}
           key={1}
           index = {1}
           size={50}
@@ -130,6 +144,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(1)}
         />
         <Square
+          val = {val}
+          setval = {setval}
           key={2}
           index = {2}
           size={50}
@@ -137,6 +153,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(2)}
         />
         <Square
+          val = {val}
+          setval = {setval}
           key={3}
           index= {3}
           size={50}
@@ -144,6 +162,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(3)}
         />
         <Square
+          val = {val}
+          setval = {setval}
           key={4}
           index = {4}
           size={50}
@@ -151,6 +171,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(4)}
         />
         <Square
+          val = {val}
+          setval = {setval}
           key={5}
           index = {5}
           size={50}
@@ -158,6 +180,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(5)}
         />
         <Square
+          val = {val}
+          setval = {setval}
           key={6}
           index = {6}
           size={50}
@@ -165,6 +189,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(6)}
         />
         <Square
+          val = {val}
+          setval = {setval}
           key={7}
           index = {7}
           size={50}
@@ -172,6 +198,8 @@ export default function Home() {
           setSelected={() => handleSquareClick(7)}
         />
         <Square
+          val = {val}
+          setval = {setval}
           key={8}
           index = {8}
           size={50}
@@ -182,7 +210,30 @@ export default function Home() {
           placeholder="Verify Proof"
           onClick={async () => {
           // Install chakrra ui for button 
-
+            const question = ["20","22","14","20"];
+            const answer1 = ["7","9","2","1","3","8","6","4","5"];
+            console.log("answer1", answer1);
+            const answer = val.map(v => v.toString());
+            console.log("answer",answer);
+            try{    
+              let z = await VerifyProof(question, answer);
+              
+              const config = await prepareWriteContract({
+                address: '0x2d5c4f71b36a89594373da263b211f036b9cce70',
+                abi: abi.abi,
+                functionName: 'verifyProof',
+                args:[z[0],z[1],z[2],z[3]]
+              });
+              const contract = new ethers.Contract(config.address, config.abi, signer.data);
+              const res  = await contract.verifyProof(z[0],z[1],z[2],z[3]);
+              console.log("res",res);           
+              if(res){
+                window.alert("correct solution");
+              }
+            }catch(e){
+              window.alert("wrong solution");
+              console.log("Errro",e);
+            }
           }}
         >
           Verify

@@ -1,5 +1,5 @@
 const groth16 = require("snarkjs").groth16;
-
+// const fs = require("fs");
 function unstringifyBigInts(o) {
     if (typeof o == "string" && /^[0-9]+$/.test(o)) {
         return BigInt(o);
