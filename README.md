@@ -62,6 +62,7 @@ yarn test ./test/<TestName>.js
 - [QuadraticEquation](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/QuadraticEquation)
 - [Compile](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Compile)
 - [Sudoku](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Sudoku)
+- [Sujiko](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Sujiko)
 
 ## Relevant links 
 
@@ -85,5 +86,6 @@ xcode-select --install
 ## Contributors
 - [supernova](https://github.com/supernovahs)
 - [tanim0la](https://github.com/tanim0la)
+- []AymericRT](https://github.com/AymericRT)
 
 
