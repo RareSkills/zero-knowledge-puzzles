@@ -70,6 +70,22 @@ yarn test ./test/<TestName>.js
 
 - [Quickly compile circuits using this online browser compiler - Zkrepl](https://zkrepl.dev)
 
+## Play Sujiko Game using circom proofs
+
+Congrats on completing all the challenges, you can play Sujiko Game . 
+
+- Go to  Frontend directory 
+- Install libraries using 
+
+```bash
+npm install
+```
+
+- Then, start the front edn 
+```
+npm run dev
+```
+
 ## Troubleshoot
 
 Mac users getting this error on circom installation
