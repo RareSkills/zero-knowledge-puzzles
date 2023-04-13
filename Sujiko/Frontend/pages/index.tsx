@@ -1,5 +1,5 @@
 import styles from "@/styles/Home.module.css";
-import { useState } from "react";
+import { useState,Dispatch, SetStateAction,useEffect  } from "react";
 import Footers from "./footer";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {VerifyProof} from "../proofs/Verify.js";
@@ -90,10 +90,26 @@ const Square = ({val,setval,index, size, selected, setSelected }: SquareProps) =
 export default function Home() {
   const [selectedSquare, setSelectedSquare] = useState<number | null>(null);
   const [val,setval]  =useState(Array<number>(9).fill(0));
+  const [ques, setques]: [string[], Dispatch<SetStateAction<string[]>>] = useState<string[]>([]);
   console.log("abi",abi);
   const signer = useSigner();
   
+  const question1:[string,string,string,string] = ["20","22","14","20"];
+  const question2:[string,string,string,string] = ["21","15","29","19"]; // 2,4,3,8,7,1,9,5,6
+  const question3:[string,string,string,string] = ["25","27","19","21"];
+  const question4:[string,string,string,string] = ["22","15","30","18"];
+  const question5:[string,string,string,string] = ["19","17","21","22"];
+  const question6:[string,string,string,string] = ["21","19","26","24"];
+  const questions:[string,string,string,string][] = [question1, question2 , question3,question4,question5,question6];
   
+  useEffect(() => {
+    const load = async() =>{
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    setques(questions[randomIndex]);
+    console.log("ques",ques);
+    }
+  load();
+},[]);
 
   const handleSquareClick = (index: number) => {
     if (selectedSquare === index) {
@@ -120,10 +136,10 @@ export default function Home() {
     <ConnectButton />
     <div className={styles.container}>
       {/*  This section is hard coded :)*/}
-      <div className={styles.redbox} >20</div>
-      <div className={styles.redbox1}>22</div>
-      <div className={styles.redbox2}>14</div>
-      <div className={styles.redbox3}>20</div>
+      <div className={styles.redbox} >{ques[0]}</div>
+      <div className={styles.redbox1}>{ques[2]}</div>
+      <div className={styles.redbox2}>{ques[1]}</div>
+      <div className={styles.redbox3}>{ques[3]}</div>
       <div style={gridStyle}>
         <Square
           val = {val}
@@ -210,13 +226,13 @@ export default function Home() {
           placeholder="Verify Proof"
           onClick={async () => {
           // Install chakrra ui for button 
-            const question = ["20","22","14","20"];
-            const answer1 = ["7","9","2","1","3","8","6","4","5"];
-            console.log("answer1", answer1);
+            // let q:[string,string,string,string] = ques.slice(0, 4);
+            // console.log("question",q);
+            console.log("quesfinal",ques);
             const answer = val.map(v => v.toString());
             console.log("answer",answer);
             try{    
-              let z = await VerifyProof(question, answer);
+              let z = await VerifyProof(ques, answer);
               
               const config = await prepareWriteContract({
                 address: '0x2d5c4f71b36a89594373da263b211f036b9cce70',
