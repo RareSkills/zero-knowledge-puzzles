@@ -81,7 +81,7 @@ Congrats on completing all the challenges, you can play Sujiko Game .
 npm install
 ```
 
-- Then, start the front edn 
+- Then, start the front end:-
 ```
 npm run dev
 ```
