@@ -74,7 +74,7 @@ yarn test ./test/<TestName>.js
 
 Congrats on completing all the challenges, you can play Sujiko Game . 
 
-- Go to  Frontend directory 
+- Go to  [Frontend](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main/Sujiko/Frontend) directory 
 - Install libraries using 
 
 ```bash
