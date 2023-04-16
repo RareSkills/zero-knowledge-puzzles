@@ -89,3 +89,8 @@
   color: white;
   text-align: center;
 }
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
