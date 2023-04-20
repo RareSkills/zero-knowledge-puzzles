@@ -25,7 +25,7 @@ describe("Quadratic Equations Test ", function () {
     const expectedOutput = 1;
 
     witness = await circuit.calculateWitness(
-      { x: "3", a: "2", b: "2", c: "4", res: "28" },
+      { x: "3", a: "2", b: "2", c: "4", res: "64" },
       true,
     );
 
