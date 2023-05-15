@@ -1,4 +1,4 @@
-# zero-knowledge-puzzles .
+# zero knowledge puzzles
 
 Zero knowledge puzzles to learn writing circuits in [circom](https://docs.circom.io/) lang.
 
