@@ -29,5 +29,9 @@ describe("Power Modulo Test ", function (){
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput2)));
     
+        witness = await circuit.calculateWitness({"a":[4,0]},true);
+        let expectedOutput3  = 1;
+        assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
+        assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput3)));
     })
 })
