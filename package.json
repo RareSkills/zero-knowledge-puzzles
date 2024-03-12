@@ -15,6 +15,7 @@
   "dependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.5",
     "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
     "circom_tester": "^0.0.19",
     "circomlib": "^2.0.5",
     "circomlibjs": "^0.1.7",
