@@ -64,5 +64,4 @@ describe("FourBitBinary", function() {
             "n": 7
         }, true)).to.eventually.be.rejected;
     });
-
 });
