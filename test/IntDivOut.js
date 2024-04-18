@@ -23,7 +23,7 @@ describe("integer division with `out`", function() {
         await circuit.loadConstraints();
     });
 
-    it("given 10 / 2 returns 5", async () => {
+    it("given 10 / 5 returns 2", async () => {
 
         let witness = await circuit.calculateWitness({
             "numerator": 10,
@@ -34,7 +34,7 @@ describe("integer division with `out`", function() {
         expect(Fr.eq(Fr.e(out), Fr.e(5))).to.be.true;
     });
 
-    it("given 11 / 5 returns 2", async () => {
+    it("given 11 / 2 returns 5", async () => {
         let witness = await circuit.calculateWitness({
             "numerator": 11,
             "denominator": 2
