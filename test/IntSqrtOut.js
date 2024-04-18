@@ -19,7 +19,7 @@ describe("integer square root computation", function() {
     let circuit;
 
     before(async () => {
-        circuit = await wasm_tester(path.join(__dirname, "../IntSqrt/", "IntSqrt.circom"));
+        circuit = await wasm_tester(path.join(__dirname, "../IntSqrtOut/", "IntSqrtOut.circom"));
         await circuit.loadConstraints();
     });
 
