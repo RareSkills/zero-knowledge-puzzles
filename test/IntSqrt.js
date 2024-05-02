@@ -40,7 +40,7 @@ describe("integer square root validation", function() {
     it("Should reject [2, 9]", async () => {
 
         await expect(circuit.calculateWitness({
-            "in": [2, 5]
-        }, true)).to.not.eventually.be.rejected;
+            "in": [2, 9]
+        }, true)).to.eventually.be.rejected;
     });
 });
