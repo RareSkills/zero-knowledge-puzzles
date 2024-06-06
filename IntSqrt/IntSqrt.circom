@@ -2,7 +2,7 @@ pragma circom 2.1.8;
 include "../node_modules/circomlib/circuits/comparators.circom";
 
 // Create a circuit that is satisfied if
-// in[0] is the floor of the integer integer
+// in[0] is the floor of the integer
 // sqrt of in[1]. For example:
 // 
 // int[2, 5] accept
