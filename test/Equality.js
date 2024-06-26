@@ -29,6 +29,14 @@ describe("Equality Test ", function (){
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput2)));
 
-    
+        witness = await circuit.calculateWitness({"a":[1,1,0]},true);
+        let expectedOutput3 = 0;
+        assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
+        assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput3)));
+
+        witness = await circuit.calculateWitness({"a":[2,1,1]},true);
+        let expectedOutput4 = 0;
+        assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
+        assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput4)));
     })
 })
