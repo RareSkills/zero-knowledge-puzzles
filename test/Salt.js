@@ -18,7 +18,7 @@ describe(" mimcSponge  ", function (){
         await circuit.loadConstraints();
         let witness ; 
         
-        const expectedOutput = 9298463176047380197626371459244539548819181814394649924288766436865924479390n;
+        const expectedOutput = 17588055722251891539725204770637639669261029749544372363945149066696774180511n;
         
         witness = await circuit.calculateWitness({"a":"4","b":"4","salt":"2"},true);
 
@@ -27,7 +27,7 @@ describe(" mimcSponge  ", function (){
 
         witness = await circuit.calculateWitness({"a":"45","b":"1001","salt":"0099"},true);
         
-        const expectedOutput2 = 17165551905088735098668729485755579194569447435279436338955576584338338632036n;
+        const expectedOutput2 = 21789734462778371607222800966534358127947886088940268109596186508023018029595n;
         assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
         assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput2)));
     
