@@ -4,7 +4,10 @@
   "description": "Zero Knowledge Puzzles by RareSkills",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "docker:build": "docker build -t zk-puzzles .",
+    "docker:run": "if [ -z $(docker images -q zk-puzzles) ]; then npm run docker:build; fi && docker run -v $(pwd):/app zk-puzzles",
+    "docker:test": "npm run docker:run test --"
   },
   "author": "Rareskills",
   "license": "GNU GENERAL PUBLIC LICENSE",
