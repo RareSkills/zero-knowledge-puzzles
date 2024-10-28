@@ -41,11 +41,11 @@ yarn install
 
 ## Using Docker for testing
 
-Ensure you have docker installed in your system
+Ensure you have docker installed and running in your system
 
 Then to run a test against the circuit, please pass the relative path to the Javascript test file
 ```
-yarn run docker:run test/Add.js  
+yarn run docker:test test/Add.js  
 ```
 
 
