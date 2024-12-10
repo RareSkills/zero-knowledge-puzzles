@@ -38,6 +38,6 @@ describe("MultiANDNoOut -- All elements are one", function() {
     it("Should be satisfied if all are 1", async () => {
         await expect(circuit.calculateWitness({
             "in": [1, 1, 1, 1]
-        }, true)).to.be.ok;
+        }, true)).to.eventually.not.be.rejected;
     });
 });
