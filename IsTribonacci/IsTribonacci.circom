@@ -1,8 +1,5 @@
 pragma circom 2.1.8;
 
-// Create constraints that enforces all signals
-// in `in` are binary, i.e. 0 or 1.
-
 template IsTribonacci(n) {
     signal input in[n];
     assert (n >= 3);
