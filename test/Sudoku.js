@@ -58,5 +58,41 @@ describe("Sudoku Tester ", function () {
     const expectedOutput3 = 0;
     assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
     assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput3)));
+
+    // Valid solution test with box constraint satisfied
+    witness = await circuit.calculateWitness({
+    question:  ["1","0","0","0",
+                "0","4","0","0",
+                "0","0","4","0",
+                "0","0","0","1"
+              ],
+    solution: ["1","2","3","4",
+                "3","4","1","2",
+                "2","1","4","3",
+                "4","3","2","1"
+              ]
+    }, true);
+
+    const expectedOutput4 = 1;
+    assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
+    assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput4)));
+
+    // Invalid solution test where box constraint is violated
+    witness = await circuit.calculateWitness({
+      question: ["1","0","0","0",
+                 "0","1","0","0",
+                 "0","0","1","0",
+                 "0","0","0","1"
+                ],
+      solution: ["1","2","3","4",
+                 "2","1","4","3",
+                 "3","4","1","2",
+                 "4","3","2","1"
+                ]
+    }, true);
+
+    const expectedOutput5 = 0;
+    assert(Fr.eq(Fr.e(witness[0]), Fr.e(1)));
+    assert(Fr.eq(Fr.e(witness[1]), Fr.e(expectedOutput5)));
   });
 });
