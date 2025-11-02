@@ -19,7 +19,7 @@ template IntSqrtOut(n) {
     signal input in;
     signal output out;
 
-    out <-- intSqrtFloor(x);
+    out <-- intSqrtFloor(in);
     // constrain out using your
     // work from IntSqrt
 }

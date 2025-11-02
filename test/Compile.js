@@ -32,7 +32,7 @@ describe("Should verify correctly  ", function (){
 
     it("Should compile the circuit and generate the proofs and verify them ", async()=> {
 
-        const verifier = await ethers.getContractFactory("Verifier");
+        const verifier = await ethers.getContractFactory("Groth16Verifier");
         const verifierContract = await verifier.deploy();
         await verifierContract.deployed();
         const { proof, publicSignals } = await groth16.fullProve(

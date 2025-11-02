@@ -5,7 +5,10 @@
 require("@nomiclabs/hardhat-waffle");
 
 module.exports = {
-  solidity: "0.6.11",
+  solidity: "0.8.20",
+  paths: {
+    sources: "Compile/contracts/", // Tell Hardhat where to find contracts.
+  },
 //   networks: {
 //     hardhat: {},
 //    

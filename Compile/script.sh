@@ -14,10 +14,10 @@ else
 fi
 
 
-# Copy the input file inside the sudoku_js directory
+# Copy the input file inside the Mul_js directory
 cp input.json Mul_js/input.json
 
-# Go inside the sudoku_js directory and generate the witness.wtns
+# Go inside the Mul_js directory and generate the witness.wtns
 cd Mul_js
 node generate_witness.js Mul.wasm input.json witness.wtns
 

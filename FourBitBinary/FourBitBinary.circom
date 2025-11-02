@@ -1,7 +1,7 @@
 pragma circom 2.1.8;
 
 // Create a circuit that takes an array of four signals
-// `in`and a signal s and returns is satisfied if `in`
+// `in`and a signal `n` and returns is satisfied if `in`
 // is the binary representation of `n`. For example:
 // 
 // Accept:
