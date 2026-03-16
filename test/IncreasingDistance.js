@@ -27,7 +27,7 @@ describe("increasing distance", function() {
         await expect(circuit.calculateWitness({
             "in1": [1, 1, 1, 1],
             "in2": [1, 1, 1, 1],
-            "in2": [1, 2, 3, 4]
+            "in3": [1, 2, 3, 4]
         }, true)).to.eventually.not.be.rejected;
     });
 
@@ -35,7 +35,7 @@ describe("increasing distance", function() {
         await expect(circuit.calculateWitness({
             "in1": [2, 2, 2, 2],
             "in2": [3, 3, 3, 3],
-            "in2": [6, 7, 8, 9]
+            "in3": [6, 7, 8, 9]
         }, true)).to.eventually.not.be.rejected;
     });
 
@@ -43,7 +43,7 @@ describe("increasing distance", function() {
         await expect(circuit.calculateWitness({
             "in1": [2, 2, 2, 2],
             "in2": [3, 3, 3, 4],
-            "in2": [6, 7, 8, 11]
+            "in3": [6, 7, 8, 11]
         }, true)).to.eventually.not.be.rejected;
     });
 
@@ -51,7 +51,7 @@ describe("increasing distance", function() {
         await expect(circuit.calculateWitness({
             "in1": [2, 2, 2, 2],
             "in2": [3, 3, 3, 4],
-            "in2": [6, 7, 8, 10]
+            "in3": [6, 7, 8, 10]
         }, true)).to.eventually.be.rejected;
     });
 
@@ -59,7 +59,7 @@ describe("increasing distance", function() {
         await expect(circuit.calculateWitness({
             "in1": [2, 2, 2, 2],
             "in2": [3, 3, 3, 4],
-            "in2": [5, 7, 8, 11]
+            "in3": [5, 7, 8, 11]
         }, true)).to.eventually.be.rejected;
     });
 
